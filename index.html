@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bakso bakar</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+        
+        /* Banner */
+        .banner {
+            padding: 30px;
+            text-align: center;
+            background-color: #ddd;
+        }
+
+        .banner h1 {
+            font-size: 2em;
+            margin: 0;
+            color: #333;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            background-color: #f8f8f8;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .sidebar ul li i {
+            font-size: 18px;
+            color: #666;
+            margin-right: 10px;
+        }
+
+        .sidebar ul li span {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Open/Close Button */
+        .toggle-btn {
+            position: fixed;
+            top: 3px;
+            right: 8px;
+            font-size: 24px;
+            background-color: #666;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Product Grid */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .operating-hours {
+            font-size: 12px;
+            color: #ccc;
+            margin-top: 5px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 200px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .product-card h2 {
+            font-size: 1.2em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .product-card .price {
+            font-size: 1.1em;
+            color: #e63946;
+            font-weight: bold;
+        }
+
+        .product-card button {
+            padding: 10px;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product-card button:hover {
+            background-color: #e63946;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Online marketplace</h1>
+        <h1>Bakso bakar hans</h1>
+        <div class="operating-hours">
+            <p>Buka: Senin - Jumat, 09:00 - 18:00</p>
+            <p>Buka: Sabtu - Minggu, 10:00 - 17:00</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Selamat datang di bakso bakar</h1>
+        <p>Penggemar Bakso Wajib Coba! Bakso Bakar dengan Sensasi Rasa yang Beda!</p>
+    </section>
+    
+    <!-- Toggle Button -->
+    <div class="toggle-btn" onclick="toggleSidebar()">&#9776; Menu</div>
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            Semua Kategori
+        </div>
+        <ul>
+            <li><i class="fas fa-tags"></i><span>PROMO HEMAT</span></li>
+            <li><i class="fas fa-utensils"></i><span>BAKSO BAKAR</span></li>
+            <li><i class="fas fa-coffee"></i><span>MINUMAN</span></l>
+            <li><i class="fas fa-shopping-bag"></i><span>TAKE AWAY</span></li>
+        </ul>
+    </aside>
+
+    <!-- Product Grid -->
+    <section class="container">
+        <div class="product-card">
+            <img src="bakso.jpg" alt="Product Image">
+            <h2>Bakso bakar</h2>
+            <p>bakso bakar isi 2</p>
+            <p class="price">Rp10.000</p>
+            <button>pesan</button>
+        </div>
+        <div class="product-card">
+            <img src="esteh.jpg" alt="Product Image">
+            <h2>es teh segar</h2>
+            <p>1 gelas es teh segar</p>
+            <p class="price">Rp7.000</p>
+            <button>pesan</button>
+        </div>
+        <div class="product-card">
+            <img src="air.jpg" alt="Product Image">
+            <h2>air putih</h2>
+            <p>1 gelas air putih segar</p>
+            <p class="price">Rp5.000</p>
+            <button>pesan</button>
+        </div>
+    </section>
+    
+    <script>
+        // Function to toggle sidebar
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var content = document.getElementById("content");
+            sidebar.classList.toggle("active");
+            content.classList.toggle("active");
+        }
+    </script>
+
+    <!-- Font Awesome untuk ikon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
